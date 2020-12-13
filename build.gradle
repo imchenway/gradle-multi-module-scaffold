@@ -1,0 +1,72 @@
+buildscript {
+    ext {
+        springBootVersaion = '2.3.5.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring-plugin'
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersaion}")
+    }
+}
+
+allprojects {
+    group 'com.hypha.scaffold'
+    version "1.0.0-SNAPSHOT"
+
+}
+
+// 子项目模块的配置
+subprojects {
+    ext {
+        junitVersion = '4.12'
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    jar {
+        enabled = true
+    }
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenLocal()
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/spring-plugin'
+        }
+        mavenCentral()
+    }
+
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    dependencies {
+        compileOnly(
+                'org.projectlombok:lombok'
+        )
+        annotationProcessor(
+                'org.springframework.boot:spring-boot-configuration-processor',
+                'org.projectlombok:lombok'
+        )
+        testImplementation(
+                "junit:junit:$junitVersion"
+        )
+        dependencyManagement {
+            imports { mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersaion") }
+        }
+    }
+}

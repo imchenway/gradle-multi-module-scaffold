@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':scaffold-model')
+    implementation project(':scaffold-persist')
+    implementation project(':scaffold-service-api')
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+}

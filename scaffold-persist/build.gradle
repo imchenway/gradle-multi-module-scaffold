@@ -1,0 +1,4 @@
+dependencies {
+    implementation project(':scaffold-model')
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.4'
+}

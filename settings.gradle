@@ -1,0 +1,6 @@
+rootProject.name = 'gradle-multi-module-scaffold'
+include 'scaffold-service-impl'
+include 'scaffold-persist'
+include 'scaffold-model'
+include 'scaffold-controller'
+include 'scaffold-service-api'

@@ -8,5 +8,6 @@ import lombok.Data;
  */
 @Data
 public class TestDo {
+    private Long id;
     private String name;
 }

@@ -1,5 +1,6 @@
 package com.multi.scaffold.persist;
 
+import com.multi.scaffold.model.TestDo;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,5 +11,9 @@ import org.springframework.stereotype.Repository;
 public class TestMapper {
     public String getName() {
         return "hello";
+    }
+
+    public String updateName(TestDo testDo) {
+        return testDo.getName();
     }
 }

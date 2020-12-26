@@ -18,8 +18,8 @@ buildscript {
 }
 
 allprojects {
-    group 'com.hypha.scaffold'
-    version "1.0.0-SNAPSHOT"
+    group 'com.multi.scaffold'
+    version "1.0.1-SNAPSHOT"
 
 }
 
@@ -55,6 +55,7 @@ subprojects {
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
     dependencies {
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.4.1'
         compileOnly(
                 'org.projectlombok:lombok'
         )

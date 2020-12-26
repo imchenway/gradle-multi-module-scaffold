@@ -4,6 +4,7 @@ dependencies {
     implementation project(':scaffold-model')
     implementation project(':scaffold-service-api')
     implementation project(':scaffold-service-impl')
+    implementation project(':scaffold-common')
     implementation 'org.springframework:spring-webmvc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
